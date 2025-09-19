@@ -1,0 +1,42 @@
+/* Reset */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: url("https://raw.githubusercontent.com/<username>/<repository>/main/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #0f172a;
+  font-family: system-ui, sans-serif;
+  color: white;
+}
+
+/* Overlay */
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  pointer-events: none;
+}
+
+/* Nội dung */
+.site-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
