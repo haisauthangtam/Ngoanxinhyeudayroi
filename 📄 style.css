@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
 
-  background-image: url("https://github.com/haisauthangtam/Ngoanxinhyeudayroi/blob/main/bg.jpg.jpg?raw=true");
+  background-image: url("https://raw.githubusercontent.com/haisauthangtam/Ngoanxinhyeudayroi/refs/heads/main/bg.jpg.jpg");
   background-size: cover;        /* ảnh phủ kín màn hình */
   background-repeat: no-repeat;  /* không lặp lại ảnh */
   background-position: center;   /* căn giữa */
