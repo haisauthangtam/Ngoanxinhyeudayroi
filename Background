@@ -1,48 +1,24 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Trang của tôi</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 
-    body {
-      height: 100vh;
-      background: url("https://raw.githubusercontent.com/haisauthangtam/Ngoanxinhyeudayroi/main/bg.jpg.jpg") no-repeat center center fixed;
-      background-size: cover;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    }
+  background-image: url("https://raw.githubusercontent.com/haisauthangtam/Ngoanxinhyeudayroi/refs/heads/main/bg.jpg.jpg");
+  background-size: cover;        /* ảnh phủ kín màn hình */
+  background-repeat: no-repeat;  /* không lặp lại ảnh */
+  background-position: center;   /* căn giữa */
+  background-attachment: fixed;  /* ảnh đứng yên khi cuộn */
+  position: relative;            /* để overlay hoạt động */
+}
 
-    .container {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem 3rem;
-      border-radius: 15px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.25rem;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>🚀 Xin chào!</h1>
-    <p>Đây là website GitHub Pages của tôi.</p>
-  </div>
-</body>
-</html>
+/* 🔹 Lớp phủ mờ */
+body::before {
+  content: "";
+  position: fixed;     /* phủ toàn màn hình */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* màu trắng mờ */
+  z-index: -1;         /* để lớp phủ nằm sau chữ */
+}
