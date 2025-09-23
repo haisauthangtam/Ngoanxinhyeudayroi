@@ -1,5 +1,5 @@
 body {
-  margin: 0; /* bỏ khoảng trắng mặc định */
+  margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 
@@ -7,5 +7,18 @@ body {
   background-size: cover;        /* ảnh phủ kín màn hình */
   background-repeat: no-repeat;  /* không lặp lại ảnh */
   background-position: center;   /* căn giữa */
-  background-attachment: fixed;  /* ảnh đứng yên khi cuộn trang */
+  background-attachment: fixed;  /* ảnh đứng yên khi cuộn */
+  position: relative;            /* để overlay hoạt động */
+}
+
+/* 🔹 Lớp phủ mờ */
+body::before {
+  content: "";
+  position: fixed;     /* phủ toàn màn hình */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* màu trắng mờ */
+  z-index: -1;         /* để lớp phủ nằm sau chữ */
 }
