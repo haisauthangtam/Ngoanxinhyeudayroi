@@ -1,24 +1,107 @@
-body {
+/* Reset mặc định */
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-
-  background-image: url("https://raw.githubusercontent.com/haisauthangtam/Ngoanxinhyeudayroi/refs/heads/main/bg.jpg.jpg");
-  background-size: cover;        /* ảnh phủ kín màn hình */
-  background-repeat: no-repeat;  /* không lặp lại ảnh */
-  background-position: center;   /* căn giữa */
-  background-attachment: fixed;  /* ảnh đứng yên khi cuộn */
-  position: relative;            /* để overlay hoạt động */
+  box-sizing: border-box;
 }
 
-/* 🔹 Lớp phủ mờ */
+body {
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  line-height: 1.6;
+
+  background-image: url("https://raw.githubusercontent.com/haisauthangtam/Ngoanxinhyeudayroi/refs/heads/main/bg.jpg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Overlay mờ để chữ dễ đọc hơn */
 body::before {
   content: "";
-  position: fixed;     /* phủ toàn màn hình */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.3); /* màu trắng mờ */
-  z-index: -1;         /* để lớp phủ nằm sau chữ */
+  background: rgba(0, 0, 0, 0.4); /* nền đen mờ */
+  z-index: -1;
+}
+
+/* Tiêu đề chính */
+h1, h2, h3 {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: fadeInDown 1s ease;
+}
+
+/* Hiệu ứng chữ */
+h1 {
+  font-size: 3rem;
+  color: #ffdd57;
+  text-shadow: 0px 4px 10px rgba(0,0,0,0.6);
+}
+
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 10px 20px;
+  animation: fadeIn 2s ease;
+}
+
+/* Container cho nội dung */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(6px); /* kính mờ */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: slideUp 1.2s ease;
+}
+
+/* Hiệu ứng nút */
+button, a.button {
+  display: inline-block;
+  background: #ffdd57;
+  color: #222;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover, a.button:hover {
+  background: #ff9a57;
+  transform: scale(1.05);
+}
+
+/* Hiệu ứng cuộn mượt */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🔹 Keyframes animation */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeInDown {
+  from {opacity: 0; transform: translateY(-30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
 }
