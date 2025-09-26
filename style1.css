@@ -23,3 +23,17 @@ a {
 a:hover {
   color: #ff6600;
 }
+/* Toàn bộ trang dùng font Helvetica */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Nội dung chương */
+article {
+  max-width: 800px;      /* Giới hạn chiều rộng cho dễ đọc */
+  margin: 20px auto;     /* Căn giữa khung bài viết */
+  text-align: left;      /* Văn bản căn lề trái */
+  line-height: 1.8;      /* Khoảng cách dòng thoáng */
+  font-size: 18px;       /* Chữ to dễ đọc */
+  padding: 0 15px;       /* Chừa khoảng trắng hai bên */
+}
