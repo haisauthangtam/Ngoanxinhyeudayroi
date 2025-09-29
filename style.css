@@ -150,6 +150,7 @@ html {
 
 .story-cover {
   width: 100%;
+  height:180px
   object-fit: contain;
   display: block;
   border-bottom: 1px solid #eee;
