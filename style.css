@@ -6,29 +6,17 @@
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   color: #fff;
   line-height: 1.6;
-
-  background-image: url("https://raw.githubusercontent.com/haisauthangtam/Ngoanxinhyeudayroi/refs/heads/main/bg.jpg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
 
   /* Ảnh nền */
-  background: url("https://raw.githubusercontent.com/haisauthangtam/Ngoanxinhyeudayroi/refs/heads/main/bg.jpg.jpg") no-repeat center center fixed;
+  background: url("https://raw.githubusercontent.com/haisauthangtam/Ngoanxinhyeudayroi/refs/heads/main/bg.jpg.jpg") 
+              no-repeat center center fixed;
   background-size: cover;
+  position: relative;
 }
 
 /* Fix cho mobile: không dùng fixed */
@@ -38,7 +26,6 @@ body {
   }
 }
 
-
 /* Overlay mờ để chữ dễ đọc hơn */
 body::before {
   content: "";
@@ -47,7 +34,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* nền đen mờ */
+  background: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
@@ -82,12 +69,12 @@ p {
   padding: 30px;
   background: rgba(255,255,255,0.1);
   border-radius: 15px;
-  backdrop-filter: blur(6px); /* kính mờ */
+  backdrop-filter: blur(6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   animation: slideUp 1.2s ease;
 }
 
-/* Hiệu ứng nút */
+/* Nút */
 button, a.button {
   display: inline-block;
   background: #ffdd57;
@@ -104,7 +91,7 @@ button:hover, a.button:hover {
   transform: scale(1.05);
 }
 
-/* Hiệu ứng cuộn mượt */
+/* Cuộn mượt */
 html {
   scroll-behavior: smooth;
 }
@@ -120,6 +107,22 @@ html {
   to {opacity: 1; transform: translateY(0);}
 }
 
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Tiêu đề tên truyện */
+.title-truyen {
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: italic;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: none;
+}
+
+/* Grid hiển thị danh sách truyện */
 .stories-grid {
   display: grid;
   gap: 1.5rem;
@@ -127,12 +130,13 @@ html {
   margin-top: 2rem;
 }
 
+/* Card truyện */
 .story-card {
-  background: #fff;
+  position: relative;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   overflow: hidden;
-  text-align: center;
+  height: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -143,82 +147,12 @@ html {
 
 .story-card a {
   display: block;
+  height: 100%;
   color: inherit;
   text-decoration: none;
-  padding: 1rem;
 }
 
-.story-cover {
-  max-width: 180px;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  border-bottom: 1px solid #eee;
-}
-
-@keyframes slideUp {
-  from {opacity: 0; transform: translateY(40px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* Tiêu đề tên truyện */
-.title-truyen {
-  color: #000; /* chữ đen */
-  font-family: Helvetica, Arial, sans-serif;
-  font-style: italic; /* nghiêng cho đẹp */
-  text-align: center;
-  font-size: 2.5rem;
-  text-shadow: none; /* bỏ bóng chữ vàng */
-}
-
-.story-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.story-cover-wrapper {
-  position: relative;
-}
-
-.story-cover {
-  width: 100%;
-  height: 220px; /* chỉnh chiều cao mong muốn */
-  object-fit: cover;
-  display: block;
-}
-
-.story-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  font-size: 1.1rem;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  color: #fff; /* chữ trắng để nổi trên ảnh */
-  background: rgba(0, 0, 0, 0.5); /* nền đen trong suốt */
-  text-align: center;
-  margin: 0;
-}
-
-/* Cho các card truyện */
-.story-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 300px; /* chiều cao cố định cho card (có thể chỉnh) */
-}
-
-/* wrapper nếu cần */
-.story-card a {
-  display: block;
-  height: 100%;
-}
-
-/* ảnh bìa full */
+/* Ảnh bìa full card */
 .story-cover {
   width: 100%;
   height: 100%;
@@ -227,12 +161,11 @@ html {
   transition: transform 0.3s ease;
 }
 
-/* hiệu ứng hover ảnh zoom nhẹ */
 .story-card:hover .story-cover {
   transform: scale(1.05);
 }
 
-/* tiêu đề đè lên ảnh */
+/* Tiêu đề đè lên ảnh */
 .story-title {
   position: absolute;
   bottom: 0;
@@ -248,4 +181,3 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
-
