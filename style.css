@@ -203,3 +203,49 @@ html {
   text-align: center;
   margin: 0;
 }
+
+/* Cho các card truyện */
+.story-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 300px; /* chiều cao cố định cho card (có thể chỉnh) */
+}
+
+/* wrapper nếu cần */
+.story-card a {
+  display: block;
+  height: 100%;
+}
+
+/* ảnh bìa full */
+.story-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* hiệu ứng hover ảnh zoom nhẹ */
+.story-card:hover .story-cover {
+  transform: scale(1.05);
+}
+
+/* tiêu đề đè lên ảnh */
+.story-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
