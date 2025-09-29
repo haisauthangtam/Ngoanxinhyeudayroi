@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Mở khóa Chương 3</title>
+
+  <script>
+    // Mở Shopee ngay khi vào trang
+    window.onload = function() {
+      window.open("https://s.shopee.vn/1VqAz1JdGr", "_blank");
+
+      // Sau ít nhất 2 giây mới quay về chương 3
+      setTimeout(function() {
+        window.location.href = "chuong3.html";
+      }, 2000);
+    };
+  </script>
+</head>
+<body>
+  <p>⏳ Đang mở Shopee...  
+     Vui lòng chờ ít nhất 2 giây, sau đó chương 3 sẽ tự động hiện ra.</p>
+</body>
+</html>
