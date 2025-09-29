@@ -3,27 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Mở khóa Chương 3</title>
+  <link rel="stylesheet" href="../style.css">
   <script>
-    let countdown = 2; // số giây chờ
+    function openShopee() {
+      // Mở Shopee trong app hoặc tab mới
+      window.open("https://s.shopee.vn/1VqAz1JdGr", "_blank");
 
-    function updateCountdown() {
-      document.getElementById("counter").innerText = countdown;
-      if (countdown === 0) {
+      // Sau 2 giây, tự động chuyển sang Chương 3
+      setTimeout(function() {
         window.location.href = "chuong3.html";
-      } else {
-        countdown--;
-        setTimeout(updateCountdown, 1000);
-      }
+      }, 2000);
     }
 
+    // Khi trang load, tự động mở Shopee
     window.onload = function() {
-      window.open("https://s.shopee.vn/1VqAz1JdGr", "_blank");
-      updateCountdown();
+      openShopee();
     };
   </script>
 </head>
 <body>
-  <p>⏳ Đang mở Shopee...<br>
-     Vui lòng chờ <span id="counter">2</span> giây, sau đó chương 3 sẽ tự động hiện ra.</p>
+  <div class="container" style="text-align:center; padding:30px;">
+    <h1>🔓 Mở khóa Chương 3</h1>
+    <p>Nhấn vào Shopee hoặc chờ 2 giây để Chương 3 tự động xuất hiện.</p>
+    <button onclick="openShopee()" 
+            style="padding:12px 24px; font-size:1.2rem; border-radius:8px; 
+                   background:#ff5722; color:#fff; border:none; cursor:pointer;">
+      🚀 Mở Shopee để tiếp tục
+    </button>
+  </div>
 </body>
 </html>
