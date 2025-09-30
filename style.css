@@ -181,3 +181,26 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+/* Căn giữa danh sách chương */
+.chapter-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa ngang */
+  gap: 12px; /* Khoảng cách giữa các chương */
+  margin-top: 20px;
+}
+
+.chapter-list a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.chapter-list a:hover {
+  background: rgba(255, 221, 87, 0.9);
+  color: #000;
+}
